@@ -20,12 +20,16 @@ This React application displays a grid of articles and allows users to view deta
 ## Setup
 
 ### `git clone clone-url`
+clone application
 
 ### `cd project dir`
+Move to project directory
 
 ### `npm install`
+Install ALl dependencies
 
 ### `npm run start`
+Runs the development server.
 
 ## Other commands
 

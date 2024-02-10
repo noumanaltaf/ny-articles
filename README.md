@@ -30,6 +30,7 @@ Install All dependencies
 
 ### `src/api/constants API_KEY`
 Replace the value of API_KEY constant variable with your API secrete key.
+Note: Ideally, this variable should reside in the .env file for better organization. However, I've included it here for the sake of simplicity.
 
 ### `npm run start`
 Runs the development server.

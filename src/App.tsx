@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ArticleList from './components/ArticleList';
 import ArticleDetail from './components/ArticleDetail';
-import { fetchMostViewedArticles } from './api/article';
-import { Article } from './api/types';
+import { IArticle } from './api/types';
 
 function App() {
-  console.log('REACT_APP_BASE_API', process.env)
-  const [loading, setLoading] = useState<boolean>(false);
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [selectedArticle, setSelectedArticle] = useState<Article>();
-
-  useEffect(
-    () => {
-      setLoading(true);
-      fetchMostViewedArticles()
-        .then((response) => {
-          if (response?.status === 'OK') {
-            setArticles(response.results);
-          }
-        })
-        .catch((err) => console.warn(err))
-        .finally(() => setLoading(false));
-    },
-    []
-  );
+  const [selectedArticle, setSelectedArticle] = useState<IArticle>();
 
   const handleArticleClick = React.useCallback(
     (article: any) => {
@@ -33,14 +14,12 @@ function App() {
     []
   );
 
-  return loading ? (
-    <div>loading articles...</div>
-  ) : (
+  return (
     <div className="App">
-      <div className="left-panel">
-        <ArticleList articles={articles} onArticleClick={handleArticleClick} />
+      <div data-testid="article-list-panel" className="left-panel">
+        <ArticleList onArticleClick={handleArticleClick} />
       </div>
-      <div className="right-panel">
+      <div data-testid='article-detail-panel' className="right-panel">
         {selectedArticle ? <ArticleDetail article={selectedArticle} /> : <p>Select an article to read</p>}
       </div>
     </div>

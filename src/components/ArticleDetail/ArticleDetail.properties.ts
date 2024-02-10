@@ -1,5 +1,5 @@
-import { Article } from "../../api/types";
+import { IArticle } from "../../api/types";
 
 export interface IArticleDetailProps {
-    article: Article;
+    article: IArticle;
 }

@@ -2,8 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('render article list panel element', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const articleListPanelElement = screen.getByTestId('article-list-panel');
+  expect(articleListPanelElement).toBeInTheDocument();
 });
+
+test('render article detail panel element', () => {
+  render(<App />);
+  const articleDetailPanelElement = screen.getByTestId('article-detail-panel');
+  expect(articleDetailPanelElement).toBeInTheDocument();
+});
+

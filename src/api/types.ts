@@ -1,7 +1,7 @@
 export interface IFetchArticleApiResult {
     status: string;
     num_results: number;
-    results: Article[];
+    results: IArticle[];
 }
 export interface MediaMetadata {
     url: string;
@@ -19,7 +19,7 @@ export interface Media {
     'media-metadata': MediaMetadata[];
 }
 
-export interface Article {
+export interface IArticle {
     uri: string;
     url: string;
     id: number;

@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IArticleProps } from './ArticleList.properties';
+import { fetchMostViewedArticles } from '../../api/article';
+import { IArticle } from '../../api/types';
 
 const Article = (props: IArticleProps) => {
-    const { articles, onArticleClick } = props;
+    const { onArticleClick } = props;
+    const [loading, setLoading] = useState<boolean>(false);
+    const [articles, setArticles] = useState<IArticle[]>([]);
 
-    return (
+    useEffect(
+        () => {
+            setLoading(true);
+            fetchMostViewedArticles()
+                .then((response) => {
+                    if (response?.status === 'OK') {
+                        setArticles(response.results);
+                    }
+                })
+                .catch((err) => console.warn(err))
+                .finally(() => setLoading(false));
+        },
+        []
+    );
+
+    return loading ? (
+        <div>loading articles...</div>
+    ) : (
         <div>
             <h2>List of Articles</h2>
             <ul>

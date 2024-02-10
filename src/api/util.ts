@@ -1,5 +1,5 @@
-const BASE_URL: string = process.env.REACT_APP_BASE_API ?? '';
-const API_KEY = process.env.REACT_APP_API_KEY ?? '';
+const BASE_URL: string = 'https://api.nytimes.com/svc/mostpopular/v2/viewed';
+const API_KEY = 'ncygvR1JPAjcud5IkDGht691aVBgGwro';
 
 // Generic function to make API requests
 async function request<T>(url: string, options: RequestInit): Promise<T> {

@@ -1,6 +1,5 @@
-import { Article } from "../../api/types";
+import { IArticle } from "../../api/types";
 
 export interface IArticleProps {
-    articles: Article[],
-    onArticleClick(article: Article): void;
+    onArticleClick(article: IArticle): void;
 }

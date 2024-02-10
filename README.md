@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+# New York Times Articles
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React application displays a grid of articles and allows users to view detailed article pages. Articles data is fetched from below mentioned api. It leverages React Query for efficient data fetching and management.
 
-## Available Scripts
+### https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=sample-key
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+-  **Articles Grid:** Presents a visual grid of articles with key information. 
+-  **Detailed Article Views:** Provides in-depth article content on separate pages. 
+-  **Asynchronous Data Fetching:** Uses React Query for optimized data fetching and caching.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-  **React:** Front-end JavaScript library for building user interfaces. 
+-   **TypeScript:** Superset of JavaScript with optional static typing for enhanced code reliability.
+- **Styled Components:** CSS-in-JS library for styling components with a focus on maintainability.
+- **React Query:** Powerful library for fetching, caching, and managing asynchronous data in React applications.
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `git clone clone-url`
+
+### `cd project dir`
+
+### `npm install`
+
+### `npm run start`
+
+## Other commands
 
 ### `npm run build`
-
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run test`
+Run all unit tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run coverage`
+Gives you coverage report
 
-### `npm run eject`
+### `npm run cypress:open`
+open cypress tool for you for testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `npm run cypress:run`
+Run and ensure all tests.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `npm run lint`
+Run eslint and check for possible errors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm run lint:fix`
+fix linting errors automatically
+	

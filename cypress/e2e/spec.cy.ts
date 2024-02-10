@@ -6,12 +6,14 @@ afterEach(() => {
 
 describe('first article', () => {
   it('exists', () => {
+    cy.wait(3000);
     cy.visit(hostUrl);
     cy.get('[data-testid="article-card"]:first').should('be.visible')
     .should("exist");
   })
 
   it('click', () => {
+    cy.wait(3000);
     cy.visit(hostUrl);
     cy.get('[data-testid="article-card"]:first').should('be.visible')
     .click(); 

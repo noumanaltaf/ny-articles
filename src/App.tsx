@@ -1,27 +1,44 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import ArticleList from './components/ArticleList';
 import ArticleDetail from './components/ArticleDetail';
-
-const articlesData = [
-  { id: 1, title: 'Article 1', content: 'Content of Article 1' },
-  { id: 2, title: 'Article 2', content: 'Content of Article 2' },
-  { id: 3, title: 'Article 3', content: 'Content of Article 3' },
-];
-
+import { fetchMostViewedArticles } from './api/article';
+import { Article } from './api/types';
 
 function App() {
-  const [selectedArticle, setSelectedArticle] = useState(null);
+  console.log('REACT_APP_BASE_API', process.env)
+  const [loading, setLoading] = useState<boolean>(false);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [selectedArticle, setSelectedArticle] = useState<Article>();
 
-  const handleArticleClick = (article: any) => {
-    setSelectedArticle(article);
-  };
+  useEffect(
+    () => {
+      setLoading(true);
+      fetchMostViewedArticles()
+        .then((response) => {
+          if (response?.status === 'OK') {
+            setArticles(response.results);
+          }
+        })
+        .catch((err) => console.warn(err))
+        .finally(() => setLoading(false));
+    },
+    []
+  );
 
-  return (
+  const handleArticleClick = React.useCallback(
+    (article: any) => {
+      setSelectedArticle(article);
+    },
+    []
+  );
+
+  return loading ? (
+    <div>loading articles...</div>
+  ) : (
     <div className="App">
       <div className="left-panel">
-        <ArticleList articles={articlesData} onArticleClick={handleArticleClick} />
+        <ArticleList articles={articles} onArticleClick={handleArticleClick} />
       </div>
       <div className="right-panel">
         {selectedArticle ? <ArticleDetail article={selectedArticle} /> : <p>Select an article to read</p>}

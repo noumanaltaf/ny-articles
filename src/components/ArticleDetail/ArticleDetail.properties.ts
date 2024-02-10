@@ -1,3 +1,5 @@
+import { Article } from "../../api/types";
+
 export interface IArticleDetailProps {
-    article: any;
+    article: Article;
 }

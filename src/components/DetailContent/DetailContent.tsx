@@ -1,10 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import { DetailContainer, Label } from './DetailContent.style';
 import Typography from '@mui/material/Typography';
 import { IDetailContentProps } from './DetailContent.properties';
-import { isNull } from '../../helpers';
 
 const DetailContent = ({ article }: IDetailContentProps) => {
 

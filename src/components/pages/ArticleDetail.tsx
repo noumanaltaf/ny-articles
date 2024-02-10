@@ -7,7 +7,7 @@ const ArticleDetail = () => {
     const { id = 0 } = useParams();
     const articles = useFetchMostViewedArticles();
 
-    const articleData = useMemo(() => articles.data?.results?.find((a) => a.id === Number(id)), [articles.data])
+    const articleData = useMemo(() => articles.data?.results?.find((a) => a.id === Number(id)), [articles.data, id])
 
     return (<DetailContent article={articleData} />);
 };

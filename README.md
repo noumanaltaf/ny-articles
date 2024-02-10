@@ -22,14 +22,14 @@ This React application displays a grid of articles and allows users to view deta
 ### `git clone clone-url`
 clone application
 
-### `cd project dir`
+### `cd project-dir`
 Move to project directory
 
 ### `npm install`
-Install ALl dependencies
+Install All dependencies
 
-### `API_KEY`
-Replace the value of API_KEY constant variable to your API secrete key. src/api/constants 
+### `src/api/constants API_KEY`
+Replace the value of API_KEY constant variable with your API secrete key.
 
 ### `npm run start`
 Runs the development server.
@@ -40,7 +40,7 @@ Runs the development server.
 Builds the app for production to the `build` folder.\
 
 ### `npm run test`
-Run all unit tests
+Run all unit tests using jest
 
 ### `npm run coverage`
 Gives you coverage report
@@ -55,5 +55,5 @@ Run and ensure all tests.
 Run eslint and check for possible errors
 
 ### `npm run lint:fix`
-fix linting errors automatically
+Fix linting errors automatically
 	

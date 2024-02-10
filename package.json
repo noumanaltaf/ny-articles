@@ -69,7 +69,9 @@
     "test": "node scripts/test.js",
     "coverage": "jest --collect-coverage",
     "cypress:open": "NODE_ENV=test cypress open",
-    "cypress:run": "NODE_ENV=test cypress run"
+    "cypress:run": "NODE_ENV=test cypress run",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "eslintConfig": {
     "extends": [

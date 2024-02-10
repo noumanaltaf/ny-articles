@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL: string = 'https://api.nytimes.com/svc/mostpopular/v2/viewed/';
+import { BASE_URL } from './constants';
 
 export const api = {
   get: <R>(url: string, params?: object) =>

@@ -28,6 +28,9 @@ Move to project directory
 ### `npm install`
 Install ALl dependencies
 
+### `API_KEY`
+Replace the value of API_KEY constant variable to your API secrete key. src/api/constants 
+
 ### `npm run start`
 Runs the development server.
 

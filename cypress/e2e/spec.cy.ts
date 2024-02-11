@@ -8,14 +8,17 @@ describe('first article', () => {
   it('exists', () => {
     cy.wait(3000);
     cy.visit(hostUrl);
-    cy.get('[data-testid="article-card"]:first').should('be.visible')
-    .should("exist");
+    cy.get('[data-testid="article-card"]:first')
+    .should("exist")
+    .should('be.visible');
   })
 
   it('click', () => {
     cy.wait(3000);
     cy.visit(hostUrl);
-    cy.get('[data-testid="article-card"]:first').should('be.visible')
+    cy.get('[data-testid="article-card"]:first')
+    .should("exist")
+    .should('be.visible')
     .click(); 
   });
 })
